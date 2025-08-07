@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import {
-  Navbar as MTNavbar,
-  MobileNav,
-  Typography,
-  Button,
-  IconButton,
-} from "@material-tailwind/react";
+// import {
+//   Navbar as MTNavbar,
+//   MobileNav,
+//   Typography,
+//   Button,
+//   IconButton,
+// } from "@material-tailwind/react";
 
 export const Navbar = () => {
   const [menu, setMenu] = useState("home");
@@ -115,29 +115,25 @@ export const Navbar = () => {
   };
 
   return (
-    <MTNavbar className="fixed top-0 left-0 w-full z-10 bg-gradient-to-r from-blue-950 via-blue-950 to-black px-4 py-3 lg:px-8 lg:py-4 shadow-lg">
+    <nav className="fixed top-0 left-0 w-full z-10 bg-gradient-to-r from-blue-950 via-blue-950 to-black px-4 py-3 lg:px-8 lg:py-4 shadow-lg">
       <div className="flex items-center justify-between">
-        <Typography
-          as="a"
+        <a
           href="#"
           className="mr-4 text-lg font-bold text-white cursor-pointer"
         >
           Hello {userName}
-        </Typography>
+        </a>
         <div className="hidden lg:flex lg:items-center lg:gap-4">{navList}</div>
         <div className="hidden lg:flex lg:items-center lg:gap-2">
-          <Button
-            size="sm"
-            className="rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition"
+          <button
+            className="rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition px-4 py-2 text-sm"
             onClick={handleClick}
           >
             Log out
-          </Button>
+          </button>
         </div>
-        <IconButton
-          variant="text"
+        <button
           className="ml-auto h-6 w-6 text-white hover:bg-transparent lg:hidden"
-          ripple={false}
           onClick={() => setOpenNav(!openNav)}
         >
           {openNav ? (
@@ -170,9 +166,9 @@ export const Navbar = () => {
               />
             </svg>
           )}
-        </IconButton>
+        </button>
       </div>
-    </MTNavbar>
+    </nav>
   );
 };
 
